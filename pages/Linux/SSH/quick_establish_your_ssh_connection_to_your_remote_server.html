@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quick Establish Your SSH Connection To Your Remote Server | Docs</title>
+    <meta name="description" content="Documentation sites">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.dcd73214.css" as="style"><link rel="preload" href="/assets/js/app.8e7043b0.js" as="script"><link rel="preload" href="/assets/js/2.7b126a5a.js" as="script"><link rel="preload" href="/assets/js/8.1492469e.js" as="script"><link rel="prefetch" href="/assets/js/10.9f87721c.js"><link rel="prefetch" href="/assets/js/11.17a6d447.js"><link rel="prefetch" href="/assets/js/3.239368e3.js"><link rel="prefetch" href="/assets/js/4.7a4d83b2.js"><link rel="prefetch" href="/assets/js/5.d49ab2e9.js"><link rel="prefetch" href="/assets/js/6.e961393c.js"><link rel="prefetch" href="/assets/js/7.48b1258d.js"><link rel="prefetch" href="/assets/js/9.dc6d4243.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.dcd73214.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="quick-establish-your-ssh-connection-to-your-remote-server"><a href="#quick-establish-your-ssh-connection-to-your-remote-server" class="header-anchor">#</a> Quick Establish Your SSH Connection To Your Remote Server</h1> <p>SSH is an unsymmetric encryption technique widely used for building a connection between the client-side and remote server. You may also use it for push and fetch code from the SVN server.</p> <blockquote><p>If you don't what unsymmetric encryption is. Well, it consisted of the public and private keys. The public key is usually stored on the server, and the private key is stored on the client-side. It like everyone can send an email to a mailbox, but only the person who holds the private key can open the mailbox.</p></blockquote> <h2 id="quick-implementation-a-few-steps"><a href="#quick-implementation-a-few-steps" class="header-anchor">#</a> Quick implementation: A few steps</h2> <h3 id="set-up-the-ssh-server"><a href="#set-up-the-ssh-server" class="header-anchor">#</a> Set up the SSH server</h3> <p>Make sure your remote Linux server has a pre-installed SSH server, or you should google and install it by yourself. ( Mine has pre-installed in CentOS7, <code>unname -r</code> to check system version)</p> <p>Well, you should add configuration to SSH config file
+<code>vim /etc/ssh/sshd_config</code>
+change <code>PasswordAuthentication no</code> to <code>PasswordAuthentication yes</code> and save.</p> <p>Well, your remote-server provider will give you a .pem private key for ssh connection use. keep it safe and we will use it later.</p> <blockquote><p><strong>WARNING</strong>
+This document is not complete for the general remote Linux server. The document can only be implemented Aliyun Node.js CentOS server</p></blockquote> <h3 id="set-up-your-ssh-client-for-windows-platform"><a href="#set-up-your-ssh-client-for-windows-platform" class="header-anchor">#</a> Set up your ssh client for Windows platform</h3> <blockquote><p><span style="color:red;">WARNING<span>
+This section is for the Windows platform only. You should set up developer mode first and add ssh function to your operating system</span></span></p></blockquote> <p>Edit or add <code>config</code> textfile in <code>C:/Users/&lt;username&gt;/.ssh/</code> folder.
+type following config:</p> <div class="language- extra-class"><pre class="language-text"><code>Host linux  #Nick name for your remote server
+User root #user you want to log in
+Hostname 123.56.13.127 #IP address
+IdentityFile &lt;your ssh key address&gt;
+</code></pre></div><p>Now open terminal(Powershell). and type <code>ssh linux</code>
+You will see the following prompt:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token operator">&gt;</span> <span class="token function">ssh</span> linux
+Last login: Tue Mar <span class="token number">31</span> 07:54:13 <span class="token number">2020</span> from <span class="token operator">&lt;</span>Remote IP address<span class="token operator">&gt;</span>
+
+Welcome to Alibaba Cloud Elastic Compute Service <span class="token operator">!</span>       
+
+<span class="token punctuation">[</span>root@<span class="token operator">&lt;</span>Your server<span class="token operator">&gt;</span> ~<span class="token punctuation">]</span><span class="token comment"># </span>
+</code></pre></div><p>It means you had log into the server successfully!</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8e7043b0.js" defer></script><script src="/assets/js/2.7b126a5a.js" defer></script><script src="/assets/js/8.1492469e.js" defer></script>
+  </body>
+</html>

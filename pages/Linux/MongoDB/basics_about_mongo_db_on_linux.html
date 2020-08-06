@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Basics about MongoDB on Linux | Docs</title>
+    <meta name="description" content="Documentation sites">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.dcd73214.css" as="style"><link rel="preload" href="/assets/js/app.8e7043b0.js" as="script"><link rel="preload" href="/assets/js/2.7b126a5a.js" as="script"><link rel="preload" href="/assets/js/6.e961393c.js" as="script"><link rel="prefetch" href="/assets/js/10.9f87721c.js"><link rel="prefetch" href="/assets/js/11.17a6d447.js"><link rel="prefetch" href="/assets/js/3.239368e3.js"><link rel="prefetch" href="/assets/js/4.7a4d83b2.js"><link rel="prefetch" href="/assets/js/5.d49ab2e9.js"><link rel="prefetch" href="/assets/js/7.48b1258d.js"><link rel="prefetch" href="/assets/js/8.1492469e.js"><link rel="prefetch" href="/assets/js/9.dc6d4243.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.dcd73214.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="basics-about-mongodb-on-linux"><a href="#basics-about-mongodb-on-linux" class="header-anchor">#</a> Basics about MongoDB on Linux</h1> <h2 id="set-up-your-database-in-a-few-minutes"><a href="#set-up-your-database-in-a-few-minutes" class="header-anchor">#</a> Set up your database in a few minutes!</h2> <p>Well, for most of the time, when we had installed MongoDB on the server, we will find the program folder is in <code>/usr/local/mongodb/*</code> and the binary files in <code>/usr/local/mongodb/bin/*</code>. If we <code>cd</code> into the binary executable file folder, we will see some important programs. The first is <code>mongod</code>, which is used for starting a database server. And the second one is <code>mongo</code>, which is used to establish a connection between user and database. It provides a command-line user interface like MySQL</p> <p>To start the database server, we should first make a folder to store our database file.
+<code>sudo mkdir -p data/db</code>
+It will create a data folder at the root level of the system, and there is a db folder inside to store database files.</p> <p>It is quite easy to start! Just go to <code>/usr/local/mongodb/bin/</code> and type
+<code>./mongod</code>
+You will see a program runs on your command line!</p> <p>But that is not what we want so far! We would like it to run as a service in Linux system. As a result, we need to add more configuration. First, we need to add configeration file for <code>mongod</code> launching. type <code>vim mongodb.conf</code> in <code>bin</code> folder.</p> <p>We simply add the following code:</p> <div class="language- extra-class"><pre class="language-text"><code># dbpath=/usr/local/mongodb/data/db/  It is just a place to store data, normally it will store in /data/db/, anyway, it's up to you!
+logpath=/var/log/mongodb.log     # Place to store log files, IMPORTANT!
+logappend=true
+port=27017 # By default
+fork=true # IMPORTANT, To keep application run in back ground
+auth=true # If you wish to add more account more than root
+</code></pre></div><p>Super Good! Now let's add configuration to make it as a service when boot! First we create file <code>sudo vim /usr/lib/systemd/system/mongodb.service</code></p> <p>Then we add some code:</p> <div class="language- extra-class"><pre class="language-text"><code>[Unit]
+    Description=mongodb 
+    After=network.target remote-fs.target nss-lookup.target
+     
+[Service]
+    Type=forking
+    ExecStart=/usr/local/mongodb/bin/mongod --config /usr/local/mongodb/bin/mongodb.conf
+    ExecReload=/bin/kill -s HUP $MAINPID
+    ExecStop=/usr/local/mongodb/bin/mongod --shutdown --config /usr/local/mongodb/bin/mongodb.conf
+    PrivateTmp=true
+      
+[Install]
+    WantedBy=multi-user.target
+</code></pre></div><p>We are about to finish, then we can reboot the system service and start database services!</p> <div class="language-bash extra-class"><pre class="language-bash"><code>systemctl daemon-reload
+systemctl start mongodb.service
+</code></pre></div><p>We are done so far, next we are going to explore the CLI provided by mongo</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8e7043b0.js" defer></script><script src="/assets/js/2.7b126a5a.js" defer></script><script src="/assets/js/6.e961393c.js" defer></script>
+  </body>
+</html>
