@@ -1,0 +1,634 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>IELTS Writing II Notes</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="291cf2fb-b802-49f0-bdd9-d6039302cd32" class="page serif"><header><div class="page-header-icon undefined"><span class="icon">🍧</span></div><h1 class="page-title">IELTS Writing II Notes</h1></header><div class="page-body"><p id="e083fe35-ab02-4ec5-9d0f-c4795042ffa9" class="">Structure:<div class="indented"><ul id="c1dbebec-d122-4a69-b069-8b2ddbd60c8b" class="bulleted-list"><li>4 paragraphs</li></ul><ul id="cb30a6d1-3194-45b4-8218-6553bc230379" class="bulleted-list"><li>13 sentences<ul id="02d910ab-6b69-4aa0-9d71-6c49aec29e5d" class="bulleted-list"><li>2 in the intro</li></ul><ul id="e7fb18ec-4265-4f78-b028-025af991d013" class="bulleted-list"><li>10 in main body</li></ul><ul id="991be94c-026c-4ff5-b10d-a02129bf0221" class="bulleted-list"><li>1 in conclusion</li></ul></li></ul><ul id="f48fec0a-daf7-4684-a52d-8c11385ab09f" class="bulleted-list"><li>250 characters</li></ul></div></p><h1 id="608e403f-3d51-4926-b9d1-656687dd9867" class="">👋 Introductions</h1><h2 id="d9d4fbba-1265-460c-a49d-5e5c0746dbf4" class=""><strong>1. Discussion</strong></h2><p id="4f9404d8-4274-44fc-a8d6-dbbcb512e9e4" class="">People have different views about <mark class="highlight-gray">the effectiveness of group study</mark> <strong>as opposed to</strong> <mark class="highlight-gray">working alone. </mark><strong>While</strong> <mark class="highlight-gray">there are some benefits to studying independently</mark><mark class="highlight-gray"><strong>, </strong></mark><mark class="highlight-gray">I believe that group work is usually more productive.</mark></p><p id="844fda74-ee6a-4251-9bfd-d682d315ee35" class="">
+</p><p id="6595c5d5-158e-406f-b0ee-93934d16328a" class="">I am both fascinated by the development of artificial intelligence and apprehensive about it&#x27;s possible negative effects. </p><h2 id="510d2582-8cb7-491e-b1e9-7748aa1d7f4d" class=""><strong>2. Opinion</strong></h2><p id="056c6eac-58c1-495b-98d6-203d3c866ab3" class="">✅ It is sometimes argued that <mark class="highlight-gray">high school students should be made to do some work in their local communities.</mark> I <strong>completely agree</strong> that<mark class="highlight-gray"> this kind of scheme would be a good idea.</mark></p><p id="464483a2-8a97-44ef-82ab-a550a50bbb8b" class="">❌ It is sometimes argued that <mark class="highlight-gray">high school students should be made to do some work in their local communities</mark>. In my opinion, <mark class="highlight-gray">it would be</mark> <strong>wrong</strong> <strong>to</strong> <mark class="highlight-gray">force teenagers to do any kind of unsalaried work.</mark></p><p id="1ef293c7-a892-44ca-bf1f-74d2003dc11a" class="">😕 It is sometimes argued that <mark class="highlight-gray">high school students should be made to do some work in their local communities. </mark><strong>While I disagree with the idea</strong> <strong>of</strong> <mark class="highlight-gray">making such programmes compulsory</mark>, <strong>I do believe that</strong> <mark class="highlight-gray">voluntary community service could benefit young people.</mark></p><h2 id="4954b19f-b9d9-4718-9277-affa014ef07f" class=""><strong>3. Problem and solution</strong></h2><p id="6c0809d3-e728-4b6b-97c5-df37828bf81e" class="">It is true that <mark class="highlight-gray">punishments do not always </mark><strong><mark class="highlight-gray">deter(prevent) </mark></strong><mark class="highlight-gray">criminals from committing more crimes</mark>. <strong>There are various reasons why</strong> <mark class="highlight-gray">offenders repeatedly break the law</mark>, and
+<mark class="highlight-gray">governments</mark> <strong>could certainly take steps to address this issue.</strong></p><h2 id="fa0970a8-18c3-4d8a-af55-19da45eb884e" class=""><strong>4. Two-part question</strong></h2><p id="54eec16a-cdac-4d11-b6fe-5b019b1f3950" class=""><mark class="highlight-gray">Work plays a central role in our lives, and we would all like to feel fulfilled professionally.</mark>
+<strong>While a variety of factors</strong> <strong>may lead to</strong> <mark class="highlight-gray">job satisfaction</mark>, <strong>it would be unrealistic to expect</strong>
+<mark class="highlight-gray">everyone to be happy at work.</mark></p><h1 id="0cdb7395-bc2a-4852-b378-812bd43ad66f" class="">🧠 Main Body</h1><h2 id="b88c149a-fd4b-4ce1-9ec4-6e12a15c946a" class=""><mark class="highlight-gray">Style One:</mark> Firstly, Secondly, Finally...</h2><p id="b0755284-97eb-44cb-a2d3-866e5d0fc7cc" class=""><mark class="highlight-gray">There are several reasons why I would argue </mark><mark class="highlight-gray">against</mark><mark class="highlight-gray"> having compulsory community service for secondary school students.</mark> <strong><mark class="highlight-purple">Firstly</mark></strong>, the school curriculum is already full with important academic subjects, such as maths, science and languages. <strong><mark class="highlight-purple">For example</mark></strong>, <em>I remember having an extremely busy timetable when I was at high school, and it would not have been possible to add to it. </em><strong><mark class="highlight-purple">Secondly</mark></strong>, students’ performance in other subjects would be affected if valuable study time were taken by charity work or neighbourhood improvement schemes. <strong><mark class="highlight-purple">Finally</mark></strong>, I believe that teenage students would be reluctant to take part in any programme of obligatory work, and this could lead to poor motivation and even bad behaviour.</p><p id="f620c4c6-d313-4040-9196-f2890888743b" class="">
+</p><h2 id="81504860-d1a6-41bd-a9c4-29e083cef815" class=""><mark class="highlight-gray">Style Two</mark>: Idea, Explain, Example...</h2><p id="053f23b5-1313-420f-a3e8-d72d1627395f" class=""><mark class="highlight-gray">On the other hand, the opportunity to do </mark><mark class="highlight-gray">voluntary</mark><mark class="highlight-gray"> community service could be extremely </mark><mark class="highlight-gray">positive</mark><mark class="highlight-gray"> for high school students.</mark> <mark class="highlight-purple">By making these programmes optional, schools would ensure that only motivated students took part. </mark><mark class="highlight-purple"><strong>These young people would gain valuable experience in an adult working environment, which could help to build their self confidence and enhance their skills.</strong></mark><mark class="highlight-purple"> </mark><mark class="highlight-purple"><em>Having such experience and skills on their CVs could greatly improve school leavers’ career prospects.</em></mark><mark class="highlight-purple"> </mark><mark class="highlight-teal">For example</mark>, a period of voluntary work experience might impress a university admissions officer or a future employer.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="cadfdd6b-d3d5-4b14-83db-d028a9ad2397"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Linking words do not help you to get a higher vocabulary score, but they do help your ‘coherence and cohesion’ score (organisation).</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b210d41a-3ca8-4192-bc82-da3b15a0a586"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">You won’t improve your score by using ‘difficult’ linking words. It isn’t more difficult to use “first and foremost” instead of “firstly”.</div></figure><h1 id="9b1d7cc7-5f5b-4336-8249-7ec647ce765b" class="">🥫Conclusions</h1><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="3e70e875-da27-4227-ba5b-aa07ac8d38b3"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Never write anything new</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f2e1aff4-ff8c-40ec-bc7c-b1a9aa4dbdb7"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">One sentence to repeat and summarise.</div></figure><p id="65357b7d-9b7f-4ca3-9685-250af1d3b460" class=""><strong>Technique</strong>: Just paraphrase the answer that you gave in your introduction.</p><h2 id="210716c9-1944-44c5-8e6f-455bffb31408" class="">Discussion Question</h2><div id="15c314bc-95f3-4e6b-a4b2-09527b7ce085" class="column-list"><div id="c6467cfc-776d-460c-95e1-2f293f6e4d31" style="width:50%" class="column"><p id="78a7f801-a863-4eb4-9c90-170cc95ab00c" class=""><strong>Introduction:</strong></p></div><div id="f84400d5-b1ac-499b-9cb4-5c01e2922756" style="width:50%" class="column"><p id="67e525c5-03f3-4098-83a0-4485c3fee331" class=""><strong>Conclusion:</strong></p></div></div><div id="fadc4bec-75fc-4e80-b78b-50af86d934eb" class="column-list"><div id="00c01297-1fea-44ac-ab79-382545da7da4" style="width:50%" class="column"><p id="dfb1024a-21a1-4cd3-b59c-fa7689357c6b" class="">It is true that video surveillance has become commonplace in many cities in recent years. While I understand that critics may see this as an invasion of privacy, I believe that there are more benefits than drawbacks.</p></div><div id="ac6fd58f-28f0-4594-a3d9-ac6258327c12" style="width:50%" class="column"><p id="c125aa5a-d514-4753-b85e-5e27976a97fa" class="">In conclusion, I would argue that the advantages of using video security system in public places do outweigh the disadvantages.</p><p id="9c250add-1ce9-4a3e-a4f0-717aa25e133a" class="">
+</p></div></div><h2 id="d4439e29-b2c2-4d3d-bc3d-c0a96e3a4873" class="">Opinion Question</h2><div id="415093cd-0898-4696-b04a-feda63e4178a" class="column-list"><div id="3ce843dc-5a26-476b-afc7-feaafbd0c258" style="width:50%" class="column"><p id="e77495e1-12c1-433d-b154-29cf4b0a0cb6" class=""><strong>Introduction:</strong></p><p id="e6903522-1fa9-4e97-8fc9-ffff1e67a15d" class="">Some people believe that parents of children who attend private schools should not need to contribute to to state schools through taxes. Personally, I completely disagree with this view.</p></div><div id="31dd1169-9aa0-4e3c-8b39-38d5c4f65870" style="width:50%" class="column"><p id="3a3458b7-e59e-4ef5-bec4-a858fc965f70" class=""><strong>Conclusion:</strong></p><p id="3f7f82de-6084-4bfe-987b-bd317a4d80ed" class="">In conclusion, I do not believe that any financial concessions should be made for people who choose private education.</p></div></div><h2 id="a53b2db1-7b00-4fc1-b8a9-c24503ea12c8" class="">Problem and Solution Question</h2><div id="7c6d4cd8-e3e5-4ccf-8ff1-4c1b65d09a91" class="column-list"><div id="4b2da7a5-bae7-46dc-9878-130b21dd092e" style="width:50%" class="column"><p id="ded05a67-8a8e-4849-ade2-d122882ffc0c" class=""><strong>Introduction:</strong></p><p id="503feb28-fa54-4e26-bda0-f8b85560a36c" class="">It is true that people in industrialised nations can expect to live longer than ever before. Although there will undoubtedly be some negative consequences of this trend, societies can take steps to <strong>mitigate</strong> these potential problems.</p></div><div id="df709fe0-eaaa-4205-8677-44269fd88c3e" style="width:50%" class="column"><p id="6d9cceb7-982d-40bb-91c1-226529b59c0f" class=""><strong>Conclusion:</strong></p><p id="18b52de5-1651-46d9-92df-88aa6fffdd69" class="">In conclusion, various measures can be taken to tackle the problems that are certain to arise as the populations of countries grow older.</p></div></div><h2 id="cfd71219-f235-481c-bfe2-4e8aec4a0c07" class="">Two-Part Question</h2><div id="053d09d5-6fb4-4708-8272-99efc92eca47" class="column-list"><div id="fd2a4608-7c99-41e1-98bb-5f1341a4c904" style="width:50%" class="column"><p id="4fd53065-e431-4655-aa4e-09d68410dc7e" class=""><strong>Introduction:</strong></p></div><div id="1867c45a-922b-4de6-a498-572e216ee39d" style="width:50%" class="column"><p id="4c85acb3-ed1c-486b-b31f-b62491a09180" class=""><strong>Conclusion:</strong></p></div></div><div id="5163ca98-d9b8-4265-99b2-44130d464fea" class="column-list"><div id="0f748b2e-9e28-4cd4-a86e-78b1090a928f" style="width:50%" class="column"><p id="e0dc39e8-7a86-4498-ad62-302ddfe5ab4f" class="">It is true that a rich variety of musical styles can be found around the world. Music is a vital part of all human culture for a range of reasons, and I would argue that traditional music <strong>is more important than</strong> modern, international music.</p><figure id="71963965-25a3-4156-a1d9-3175f8de0a0b"><a href="https://www.bilibili.com/video/BV1oe411p7Rx?p=7" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.bilibili.com/video/BV1oe411p7Rx?p=7</div></div></a></figure></div><div id="deb17408-8ce1-4551-91c7-44d09b242516" style="width:50%" class="column"><p id="8f46f61b-6288-433d-ab5b-2b87925979fc" class="">In conclusion, music is a necessary part of human existence, and I believe that traditional music should <strong>be given more importance than </strong>international music</p><p id="b213a2e6-d145-4d4b-a15a-900a0e00f8ec" class="">
+</p></div></div><figure id="7ddc0dc9-e778-4c59-ac29-e35c26461c2b" class="link-to-page"><a href="IELTS%20Writing%20II%20Notes%20291cf2fbb80249f0bdd9d6039302cd32/Crime%20essay%20topical%20word%20and%20phrases%207ddc0dc9e7784c59ac29e35c26461c2b.html">Crime essay topical word and phrases</a></figure><figure id="4c71a4c4-3f5a-480c-8fb4-7bdec5bdc609" class="link-to-page"><a href="IELTS%20Writing%20II%20Notes%20291cf2fbb80249f0bdd9d6039302cd32/More%20Resources%204c71a4c43f5a480c8fb47bdec5bdc609.html">More Resources</a></figure><figure id="f9ce4a74-d400-462a-8da6-8fb63964ca4c" class="link-to-page"><a href="IELTS%20Writing%20II%20Notes%20291cf2fbb80249f0bdd9d6039302cd32/Government%20essay%20topical%20words%20f9ce4a74d400462a8da68fb63964ca4c.html">Government essay topical words</a></figure><figure id="3d0647c6-4ec0-4ebe-94f9-a2830fe31c46" class="link-to-page"><a href="IELTS%20Writing%20II%20Notes%20291cf2fbb80249f0bdd9d6039302cd32/Education%20essay%20topical%20words%203d0647c64ec04ebe94f9a2830fe31c46.html">Education essay topical words</a></figure><figure id="b31f6797-58c9-49d3-bae8-9a9257328755" class="link-to-page"><a href="IELTS%20Writing%20II%20Notes%20291cf2fbb80249f0bdd9d6039302cd32/Problem-solving%20essay%20b31f679758c949d3bae89a9257328755.html">Problem-solving essay</a></figure><figure id="30a429cb-93db-4640-a82f-1a02ffcd59b3" class="link-to-page"><a href="IELTS%20Writing%20II%20Notes%20291cf2fbb80249f0bdd9d6039302cd32/Environment%20protection%20essay%2030a429cb93db4640a82f1a02ffcd59b3.html">Environment protection essay</a></figure><figure id="e103bd45-c90e-4b03-a88c-66f3ff1121db" class="link-to-page"><a href="IELTS%20Writing%20II%20Notes%20291cf2fbb80249f0bdd9d6039302cd32/Topical%20Vocabulary%20about%20colours%20e103bd45c90e4b03a88c66f3ff1121db.html">Topical Vocabulary about colours</a></figure><figure id="7bf0cf81-1a80-4bf1-b9ec-5fd9eb49f791" class="link-to-page"><a href="IELTS%20Writing%20II%20Notes%20291cf2fbb80249f0bdd9d6039302cd32/Topical%20vocabulary%20public%20health%207bf0cf811a804bf1b9ec5fd9eb49f791.html">Topical vocabulary public health</a></figure><figure id="b16e8997-311f-41a7-b378-0b4717a89f33" class="link-to-page"><a href="IELTS%20Writing%20II%20Notes%20291cf2fbb80249f0bdd9d6039302cd32/Topical%20Vocabulary%20Survival%20b16e8997311f41a7b3780b4717a89f33.html">Topical Vocabulary Survival</a></figure></div></article></body></html>
