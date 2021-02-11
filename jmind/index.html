@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jmind | Edit your mindmap online</title>
+    <link rel="icon" href="https://www.yangboyu.net/img/icon.ico">
+    <!-- custom style -->
+    <link type="text/css" rel="stylesheet" href="./jsmind.css" />
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./main-ui.css">
+    <!-- custom javascript -->
+    <script src="https://www.yangboyu.net/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./jsmind.js"></script>
+    <script type="text/javascript" src="./jsmind.draggable.js"></script>
+    <script src="./jsmind.screenshot.js"></script>
+    <script type="text/javascript" src="./jsmind.shell.js"></script>
+    <script src="./ui.js"></script>
+    <script src="./main.js"></script>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <h1>Jmind</h1>
+    </nav>
+    <div class="main-control-group">
+        <div class="control-tabs-group">
+            <div class="control-tab" id="editbutton">Edit</div>
+            <div class="control-tab" id="stylebutton">Style</div>
+            <div class="control-tab" id="savebutton">Save</div>
+        </div>
+        <div class="main-panel">
+            <div id="editpanel" class="control_panel">
+                <div class="edit-group edit-group-1">
+                    <button class="btn btn-default btn-xs" onclick="remove_node();"><span
+                            class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;remove node</button>
+                    <button class="btn btn-default btn-xs" onclick="add_node()"><span class="glyphicon glyphicon-plus"
+                            aria-hidden="true"></span>&nbsp;Add Node</button>
+                    <button class="btn btn-default btn-xs" onclick="add_image_node();"><span
+                            class="glyphicon glyphicon-picture" aria-hidden="true"></span>&nbsp;add a image
+                        node</button>
+                </div>
+                <div class="edit-group edit-group-2">
+                    <button class="btn btn-primary btn-sm" onclick="move_to_first();"><span
+                            class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>&nbsp;move to
+                        first</button>
+                    <button class="btn btn-primary btn-sm" onclick="move_to_last();"><span
+                            class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>&nbsp;move to
+                        last</button>
+                </div>
+                <div class="edit-group">
+                    <button class="btn btn-success" onclick="toggle_editable(this);">disable<br />editable</button>
+                </div>
+                <div class="edit-group edit-group-4">
+                    <label for="modify_text">Select a node and input text</label>
+                    <div class="inlineform">
+                        <input class="form-control" id="modify_text" type="text">
+                        <button type="button" class="btn btn-info" onclick="modify_node();">modify</button>
+                    </div>
+                </div>
+            </div>
+            <div id="stylepanel" class="control_panel">
+                <div class="style-group style-group-1">
+                    <div class="form-group">
+                        <label for="form-control">Theme</label>
+                        <select onchange="set_theme(this.value);" class="form-control">
+                            <option value="">default</option>
+                            <option value="primary">primary</option>
+                            <option value="warning">warning</option>
+                            <option value="danger">danger</option>
+                            <option value="success">success</option>
+                            <option value="info">info</option>
+                            <option value="greensea" selected="selected">greensea</option>
+                            <option value="nephrite">nephrite</option>
+                            <option value="belizehole">belizehole</option>
+                            <option value="wisteria">wisteria</option>
+                            <option value="asphalt">asphalt</option>
+                            <option value="orange">orange</option>
+                            <option value="pumpkin">pumpkin</option>
+                            <option value="pomegranate">pomegranate</option>
+                            <option value="clouds">clouds</option>
+                            <option value="asbestos">asbestos</option>
+                            <option value="jellyfish">jellyfish</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="style-group">
+                    <label for="form">Font size</label>
+                    <div class="form form-inline">
+                        <div class="form-group form-group-sm">
+                            <select class="form-control" name="fontface" onchange="change_text_color(this.value)">
+                                <option value="#00ccff">Blue</option>
+                                <option value="#000">Black</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-group-sm" onchange="change_text_size(this.value)">
+                            <select class="form-control" name="fontsize">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="style-group">
+                    <button id="zoom-in-button" class="btn btn-default btn-sm" onclick="zoomIn();">
+                        Zoom In
+                    </button>
+                    <button id="zoom-out-button" class="btn btn-default btn-sm" onclick="zoomOut();">
+                        Zoom Out
+                    </button>
+                </div>
+            </div>
+            <div id="savepanel" class="control_panel">
+                <div class="save-group">
+                    <button class="btn btn-default btn-xs" onclick="screen_shot()"><span
+                            class="glyphicon glyphicon-share" aria-hidden="true"></span>&nbsp;Export as picture</button>
+                    <button class="btn btn-default btn-xs" onclick="save_freemind_file()"><span
+                            class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp;Export as FreeMind
+                        File</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="jsmind_container"></div>
+    <div style="display:none">
+        <input class="file" type="file" id="image-chooser" accept="image/*" />
+    </div>
+    <div class="panel panel-default" id="alert-box">
+        <div class="panel-heading">
+            <h3 class="panel-title">Warning</h3>
+        </div>
+        <div class="panel-body">
+            <div id="message-box"></div>
+            <button class="btn btn-primary btn-xs" onclick="close_box()">Close</button>
+        </div>
+    </div>
+</body>
+
+</html>

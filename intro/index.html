@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Jelly | Introduction</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="/img/traveler.jpg">
+					<h3 style="color: #555">yangboyu.net</h3>
+					<h2 style="color: black">解决IGCSE/AS/AL的疑难困惑</h2>
+					<p style="color: #333">
+						<small>Jelly倾心数月打造，近万计的代码沉淀，为您今后的学习路上披荆斩棘</small>
+					</p>
+				</section>
+				<section>
+						<section>
+								<h2>在这里...</h2>
+								<ul>
+									<li>追踪到每一道重难题的答案</li>
+									<li>史上最深入浅出的教程</li>
+									<li>实时更新的资源</li>
+									<li>他人分享的经验&心得</li>
+								</ul>
+						</section>
+						<section>
+							<h2>强大的搜索系统</h2>
+							<p>我们开发了搜索功能，旨在保证用户在输入书上的指定题号便可以查询到详解</p>
+							<p><small>下面是一个使用示例</small></p>
+							<img src="/css/images/example1.PNG" alt="oops,您的网络似乎被jelly吃了,刷新试试">
+						</section>
+						<section>
+							<h2>透彻的计算机编程卷教程</h2>
+							<blockquote>
+								<small>一学计算机就掉头发 ? 来这里，从此计算机不再是恶魔</small>
+								<small>刚入门编程，迷茫而无所知 ? 来这里，实现更高的飞跃</small>
+								<small>一跑代码就Error,查遍全网无结果 ? 来这里，跳过前人踩下的坑</small>
+							</blockquote>
+						</section>
+						<section>
+							<h2>创新的设计理念</h2>
+							<p>我们采用了赞赏系统💴，这意味着在作者保证权益的情况下，我们的内容都是优质且免费的</p>
+						</section>
+				</section>
+				<section data-transition="convex">
+					<h2>更多的计算机科学</h2>
+					<p>你是否不满足于课本中的知识，想要扩展?</p>
+					<p><small>
+						这里提供了丰富的教程和资源，包括ACSL竞赛，算法与数据结构
+					</small></p>
+				</section>
+				<section data-transition="zoom" data-background="/img/traveler.jpg">
+					<h3 style="color: #555">yangboyu.com</h3>
+					<p style="color: black">Build For Tomorrow's Most Outstanding Achievers</p>
+				</section>
+			</div>
+			
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

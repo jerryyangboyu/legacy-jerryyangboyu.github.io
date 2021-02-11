@@ -1,0 +1,131 @@
+/* reset */
+body {
+    margin: 0;
+    padding: 0;
+    width:100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.nav-bar {
+    padding-left:1rem;
+    color: #fff;
+    background-color: #393f4f;
+}
+/* custom nav tabs */
+.main-control-group{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    background-color: #fff;
+    overflow-y: auto;
+}
+.control-tabs-group{
+    /* display */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* style */
+    width: 100%;
+    border-bottom: 1px solid #96c6f0;
+}
+.control-tabs-group>.control-tab.active, .control-tabs-group>.control-tab.active:focus, .control-tabs-group>.control-tab.active:hover {
+    color: #555;
+    cursor: pointer;
+    background-color: #96c6f0;
+    border: 1px solid #ddd;
+    border-bottom-color: #96c6f0;
+}
+.control-tabs-group>.control-tab {
+    color: #337ab7;
+    cursor: pointer;
+    margin-right: 2px;
+    padding: 10px 15px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    list-style-type: none;
+} 
+.control-tabs-group>.control-tab:hover{
+    background-color: #96c6f0;
+    color:white
+}
+
+/* custom other parts */
+#alert-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    display: none;
+    width: 200px;
+}
+
+#message-box{
+    font-size: 1.5rem
+}
+
+#jsmind_container {
+    width: 100%;
+    flex: 1;
+    margin: 0;
+    border: none;
+    background: #f4f4f4;
+}
+
+/* css for panel */
+.control_panel{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width:100%;
+    padding: 1rem;
+    height: 100%;
+}
+.style-group-1{
+    width:15rem;
+}
+.style-group{
+    height: 8rem;
+    padding: 1rem;
+    border-right: 2px dashed #666;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.edit-group-1{
+    width:15rem; 
+}
+.edit-group-4 > .inlineform{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#modify_text{
+    width: 12rem !important;
+    margin-right: 0.5rem !important;
+}
+.edit-group{
+    height: 8rem;
+    padding: 1rem;
+    border-right: 2px dashed #666;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.save-group{
+    height: 6rem;
+    padding: 1rem;
+    border-right: 2px dashed #666;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
